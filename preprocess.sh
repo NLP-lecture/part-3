@@ -6,7 +6,8 @@ fairseq-preprocess --source-lang $src --target-lang $tgt \
   --validpref $TEXT/valid \
   --testpref $TEXT/test \
   --destdir data-bin/multi30k \
-  --workers 8 
+  --workers 8 \
+  --joined-dictionary 
   #--thresholdtgt 4 \
   #--thresholdsrc 4 \
   #--nwordstgt 20000 \

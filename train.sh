@@ -1,14 +1,14 @@
-DATA='data-bin/oral-threshold4-size20000'  # input data
+DATA='data-bin/multi30k'  # input data
 ARCH='transformer_tiny'  # model structure
-SAVE='checkpoints/transformer.en-de.tiny'  # save dir
+SAVE='checkpoints/transformer.en-fr.tiny'  # save dir
 
-tgt='zh'
+tgt='fr'
 src='en'
 
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 fairseq-train $DATA --task translation \
-      --arch $ARCH --share-decoder-input-output-embed --dropout 0.35 \
-      --warmup-updates 150 --lr 0.003 \
+      --arch $ARCH --share-all-embeddings --dropout 0.35 \
+      --warmup-updates 150 --lr 0.006 \
       --max-tokens 8196 \
       --max-update 1000 \
       --source-lang $src \

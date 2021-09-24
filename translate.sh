@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 set -e
 
-model_dir=checkpoints/transformer.en-de.tiny
+model_dir=checkpoints/transformer.en-fr.tiny
 
 # set device
 gpu=7
@@ -12,9 +12,9 @@ ensemble=5
 batch_size=128
 beam=10
 src_lang=en
-tgt_lang=zh
-length_penalty=2.6
-data_dir=oral-threshold4-size20000
+tgt_lang=fr
+length_penalty=1.3
+data_dir=multi30k
 
 checkpoint=checkpoint_best.pt
 
